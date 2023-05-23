@@ -1,5 +1,6 @@
 const mongodb = require('mongoose')
 const { Schema } = require('mongoose')
+const { v4: uuidv4 } = require('uuid');
 
 const userSchema = new Schema({
     email: {
@@ -34,10 +35,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    confirmed: {
-        type: Boolean,
-        required: true
-    }
 }) 
 
 module.exports = mongodb.model('user', userSchema)
